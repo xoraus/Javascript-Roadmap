@@ -12,5 +12,26 @@ function add() {
     outputResult(currentResult, calcDescription);
 }
 
+function subtract() {
+    const enteredNumber = getUserNumber();
+    const calcDescription = `${currentResult} - ${userInput.value}`;
+    currentResult = currentResult - enteredNumber;
+    outputResult(currentResult, calcDescription);
+}
+
+function multiply() {
+    const enteredNumber = getUserNumber();
+    const calcDescription = `${currentResult} * ${userInput.value}`;
+    currentResult = currentResult * enteredNumber;
+    outputResult(currentResult, calcDescription);
+ }
+
+function divide() {
+    const enteredNumber = getUserNumber();
+    const calcDescription = `${currentResult} / ${userInput.value}`;
+    currentResult = currentResult / enteredNumber;
+    outputResult(currentResult, calcDescription);
+}
+
 addBtn.addEventListener('click', add);
 
