@@ -5,33 +5,41 @@ function getUserNumberInput() {
     return parseInt(userInput.value);
 }
 
-function add() {
-    const enteredNumber = getUserNumber();
-    const calcDescription = `${currentResult} + ${userInput.value}`;
-    currentResult = currentResult + enteredNumber;
+function createAndWriteOutput(operator, resultBeforeCalc, calcNumber) {
+    const calcDescription = `${resultBeforeCalc} ${operator} ${calcNumber}`;
     outputResult(currentResult, calcDescription);
+}
+
+function add() {
+    const enteredNumber = getUserNumberInput();
+    const initialResult = currentResult;
+    currentResult = currentResult + enteredNumber;
+    createAndWriteOutput('+', initialResult, currentResult);
 }
 
 function subtract() {
-    const enteredNumber = getUserNumber();
-    const calcDescription = `${currentResult} - ${userInput.value}`;
+    const enteredNumber = getUserNumberInput();
+    const initialResult = currentResult;
     currentResult = currentResult - enteredNumber;
-    outputResult(currentResult, calcDescription);
+    createAndWriteOutput('-', initialResult, enteredNumber);
 }
 
 function multiply() {
-    const enteredNumber = getUserNumber();
-    const calcDescription = `${currentResult} * ${userInput.value}`;
+    const enteredNumber = getUserNumberInput();
+    const initialResult = currentResult;
     currentResult = currentResult * enteredNumber;
-    outputResult(currentResult, calcDescription);
+    createAndWriteOutput('*', initialResult, enteredNumber);
  }
 
 function divide() {
-    const enteredNumber = getUserNumber();
-    const calcDescription = `${currentResult} / ${userInput.value}`;
+    const enteredNumber = getUserNumberInput();
+    const initialResult = currentResult;
     currentResult = currentResult / enteredNumber;
-    outputResult(currentResult, calcDescription);
+    createAndWriteOutput('/', initialResult, enteredNumber);
 }
 
 addBtn.addEventListener('click', add);
+subtractBtn.addEventListener('click', subtract);
+multiplyBtn.addEventListener('click', multiply);
+divideBtn.addEventListener('click', divide);
 
