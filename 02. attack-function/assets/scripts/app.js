@@ -33,7 +33,7 @@ function attackHandler() {
 }
 
 function strongAttackHandler() {
-  attackMonster("STRONG_ATTACK");
+  attackMonster('STRONG_ATTACK');
 }
 
 attackBtn.addEventListener('click', attackHandler);
